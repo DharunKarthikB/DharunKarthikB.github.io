@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 00: Orientation & Self-Discovery | ProtoSem</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              appleBlueLight: '#0071E3',
+              appleBlueDark: '#2997FF',
+            }
+          }
+        }
+      }
+    </script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .glass {
+          @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-xl;
+        }
+        .dark .glass {
+          @apply bg-gray-900/40 border-gray-700/50;
+        }
+        .text-accent {
+          @apply text-appleBlueLight dark:text-appleBlueDark;
+        }
+        .bg-accent {
+          @apply bg-appleBlueLight dark:bg-appleBlueDark;
+        }
+        body {
+            @apply bg-gray-50 dark:bg-[#0a0a0a] text-gray-900 dark:text-white transition-colors duration-300;
+        }
+      }
+    </style>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="relative min-h-screen">
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass border-b-0 m-4 rounded-full px-6 py-4 max-w-4xl mx-auto flex justify-between items-center">
+        <a href="../index.html#protosem" class="font-bold text-sm md:text-lg tracking-tight hover:text-accent transition flex items-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+            Back to Portfolio
+        </a>
+    </nav>
+
+    <!-- Background Decor -->
+    <div class="fixed inset-0 bg-gradient-to-br from-blue-50/50 to-indigo-100/50 dark:from-[#0a0a0a] dark:to-[#1a1a2e] -z-10"></div>
+    <div class="fixed top-1/4 left-1/4 w-64 h-64 bg-accent/10 rounded-full blur-3xl -z-10"></div>
+    
+    <main class="max-w-3xl mx-auto px-4 py-32">
+        <article class="glass p-8 md:p-12 rounded-3xl" data-aos="fade-up">
+            <header class="mb-12 border-b border-gray-200 dark:border-gray-800 pb-8">
+                <p class="text-accent font-bold tracking-widest text-sm mb-3">PHASE 01 • WEEK 00</p>
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Orientation & Self-Discovery</h1>
+            </header>
+
+            <div class="prose prose-lg dark:prose-invert max-w-none space-y-8 text-gray-700 dark:text-gray-300 leading-relaxed">
+                <p>
+                    Week 0 marked the inauguration of PRICE ProtoSem, in collaboration with the Retailers Association of India (RAI). Through ice-breaker sessions and group activities, I got to know my peers and experienced the importance of collaboration and teamwork.
+                </p>
+
+                <p>
+                    As part of the week’s self-discovery activities, I completed the 16 Personalities test, where I was identified as a <strong>Commander (ENTJ-A)</strong>. 
+                </p>
+
+                <figure class="my-10" data-aos="fade-up">
+                    <img src="../assets/protosem/week-00-mbti.png" alt="ENTJ-A Commander Personality Result" class="w-full rounded-2xl shadow-2xl border border-white/10 dark:border-gray-800">
+                    <figcaption class="text-center text-sm text-gray-500 mt-4 font-medium">My 16 Personalities Test Result</figcaption>
+                </figure>
+
+                <p>
+                    I also connected with the Zen Pencils story <em>“What If Money Was No Object?”</em>, which encouraged me to reflect on my ambitions, values, and perspective towards success.
+                </p>
+
+                <figure class="my-10" data-aos="fade-up">
+                    <img src="../assets/protosem/week-00-comic.png" alt="What If Money Was No Object Comic Extract" class="w-full rounded-2xl shadow-2xl border border-white/10 dark:border-gray-800">
+                    <figcaption class="text-center text-sm text-gray-500 mt-4 font-medium">Extract from "What If Money Was No Object?" by Zen Pencils</figcaption>
+                </figure>
+            </div>
+        </article>
+    </main>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 800, once: true, offset: 100 });
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.classList.add('dark');
+      }
+    </script>
+</body>
+</html>
