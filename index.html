@@ -261,11 +261,12 @@
       const timelineContainer = document.getElementById('protosem-timeline');
       const protoSemWeeks = Array.from({ length: 21 }, (_, i) => {
           const week = i;
+          const isCompleted = week === 0;
           return {
               week: week,
               phase: Math.max(1, Math.ceil(week / 5)),
-              slug: `protosem/week-${week.toString().padStart(2, '0')}`,
-              status: "FIELD NOTES IN PROGRESS"
+              slug: isCompleted ? `protosem/week-${week.toString().padStart(2, '0')}.html` : `#protosem/week-${week.toString().padStart(2, '0')}`,
+              status: isCompleted ? "COMPLETED" : "FIELD NOTES IN PROGRESS"
           };
       });
 
@@ -302,7 +303,7 @@
                       
                       ${isEven ? `
                       <!-- Card Left -->
-                      <a href="#${item.slug}" class="w-full ml-12 md:ml-0 md:w-5/12 glass p-6 rounded-2xl transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-accent/15 border border-white/20 dark:border-gray-700/50 hover:border-accent/40 cursor-pointer text-left md:text-right relative overflow-hidden block">
+                      <a href="${item.slug}" class="w-full ml-12 md:ml-0 md:w-5/12 glass p-6 rounded-2xl transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-accent/15 border border-white/20 dark:border-gray-700/50 hover:border-accent/40 cursor-pointer text-left md:text-right relative overflow-hidden block">
                           <div class="absolute inset-0 bg-gradient-to-r from-accent/0 via-accent/5 to-accent/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
                           <p class="text-[10px] font-bold text-accent/80 mb-2 tracking-[0.2em]">PHASE 0${item.phase}</p>
                           <h5 class="text-xl font-bold text-gray-900 dark:text-white mb-3 transition-colors group-hover:text-accent flex items-center gap-2 md:justify-end">
@@ -324,7 +325,7 @@
                       <!-- Spacer Left -->
                       <div class="hidden md:block w-5/12"></div>
                       <!-- Card Right -->
-                      <a href="#${item.slug}" class="w-full ml-12 md:ml-0 md:w-5/12 glass p-6 rounded-2xl transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-accent/15 border border-white/20 dark:border-gray-700/50 hover:border-accent/40 cursor-pointer text-left relative overflow-hidden block">
+                      <a href="${item.slug}" class="w-full ml-12 md:ml-0 md:w-5/12 glass p-6 rounded-2xl transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-accent/15 border border-white/20 dark:border-gray-700/50 hover:border-accent/40 cursor-pointer text-left relative overflow-hidden block">
                           <div class="absolute inset-0 bg-gradient-to-r from-accent/0 via-accent/5 to-accent/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
                           <p class="text-[10px] font-bold text-accent/80 mb-2 tracking-[0.2em]">PHASE 0${item.phase}</p>
                           <h5 class="text-xl font-bold text-gray-900 dark:text-white mb-3 transition-colors group-hover:text-accent flex items-center gap-2">
