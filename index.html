@@ -48,6 +48,7 @@
         <span class="font-bold text-xl tracking-tight">DK<span class="text-accent">.</span></span>
         <div class="flex gap-6 items-center text-sm font-medium">
             <a href="#experience" class="hover:text-accent transition">Experience</a>
+            <a href="#protosem" class="hover:text-accent transition">ProtoSem</a>
             <a href="#leadership" class="hover:text-accent transition">Leadership</a>
             <a href="#skills" class="hover:text-accent transition">Skills</a>
             <a href="resume.html" class="bg-accent text-white px-4 py-2 rounded-full hover:opacity-90 transition">Resume</a>
@@ -101,6 +102,65 @@
                 <span>Gain hands-on experience across problem identification, ideation, prototyping and product development.</span>
              </li>
           </ul>
+        </div>
+      </section>
+
+      <!-- ProtoSem Section -->
+      <section id="protosem" data-aos="fade-up" class="pt-8">
+        <h3 class="text-3xl font-bold mb-2 flex items-center gap-3">
+           <span class="w-8 h-1 bg-accent rounded-full"></span> PRICE ProtoSem
+        </h3>
+        <p class="text-xl text-accent font-medium mb-1">Innovation Engineer Trainee</p>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-6 uppercase tracking-wider font-semibold">20-Week Industry-Integrated Innovation Programme</p>
+        
+        <div class="glass p-8 rounded-3xl relative overflow-hidden mb-12">
+            <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                Selected for a 20-week industry-integrated innovation programme focused on solving real-world retail and commerce challenges through AI, analytics, intelligent systems, IoT, prototyping, and entrepreneurship.
+            </p>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
+                Working with industry problem statements to explore, develop, and validate practical technology solutions beyond conventional classroom learning.
+            </p>
+            
+            <div class="pt-6 border-t border-white/20 dark:border-gray-700/50">
+                <h4 class="text-xs font-bold text-gray-900 dark:text-white mb-4 uppercase tracking-widest text-accent">Programme Focus</h4>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1.5 rounded-lg border border-accent/30 bg-accent/5 text-accent text-[11px] uppercase tracking-wider font-bold">Phygital Retail & Intelligent Commerce</span>
+                    <span class="px-3 py-1.5 rounded-lg border border-accent/30 bg-accent/5 text-accent text-[11px] uppercase tracking-wider font-bold">AI & Analytics</span>
+                    <span class="px-3 py-1.5 rounded-lg border border-accent/30 bg-accent/5 text-accent text-[11px] uppercase tracking-wider font-bold">Intelligent Systems & IoT</span>
+                    <span class="px-3 py-1.5 rounded-lg border border-accent/30 bg-accent/5 text-accent text-[11px] uppercase tracking-wider font-bold">Prototyping</span>
+                    <span class="px-3 py-1.5 rounded-lg border border-accent/30 bg-accent/5 text-accent text-[11px] uppercase tracking-wider font-bold">Entrepreneurship</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 20-Week Journey UI -->
+        <div class="mt-8">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-16 gap-6">
+                <h4 class="text-2xl font-bold flex items-center gap-3">
+                    Programme Archive
+                </h4>
+                
+                <!-- Programme Progress indicator -->
+                <div class="hidden md:flex items-center text-xs font-mono text-gray-400 dark:text-gray-500 tracking-widest">
+                    <span class="text-accent font-bold">01</span> <span class="mx-2">━━━━</span> 05 <span class="mx-2">━━━━</span> 10 <span class="mx-2">━━━━</span> 15 <span class="mx-2">━━━━</span> 20
+                </div>
+                
+                <!-- Phase Navigation -->
+                <div class="flex flex-wrap gap-2 p-1.5 glass rounded-2xl" id="protosem-nav">
+                    <button class="phase-btn active px-5 py-2.5 rounded-xl text-xs font-bold tracking-widest transition-all duration-300 bg-accent text-white shadow-lg shadow-accent/20" data-phase="all">ALL</button>
+                    <button class="phase-btn px-5 py-2.5 rounded-xl text-xs font-bold tracking-widest transition-all duration-300 text-gray-500 hover:text-gray-900 dark:hover:text-white" data-phase="1">PHASE 01</button>
+                    <button class="phase-btn px-5 py-2.5 rounded-xl text-xs font-bold tracking-widest transition-all duration-300 text-gray-500 hover:text-gray-900 dark:hover:text-white" data-phase="2">PHASE 02</button>
+                    <button class="phase-btn px-5 py-2.5 rounded-xl text-xs font-bold tracking-widest transition-all duration-300 text-gray-500 hover:text-gray-900 dark:hover:text-white" data-phase="3">PHASE 03</button>
+                    <button class="phase-btn px-5 py-2.5 rounded-xl text-xs font-bold tracking-widest transition-all duration-300 text-gray-500 hover:text-gray-900 dark:hover:text-white" data-phase="4">PHASE 04</button>
+                </div>
+            </div>
+
+            <!-- The Timeline Container -->
+            <div id="protosem-timeline" class="relative max-w-5xl mx-auto py-8">
+                <!-- Center Line (Desktop only) -->
+                <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent/0 via-accent/30 to-accent/0 transform -translate-x-1/2"></div>
+                <!-- Dynamic Content injected here -->
+            </div>
         </div>
       </section>
 
@@ -196,6 +256,100 @@
       if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
           document.documentElement.classList.add('dark');
       }
+
+      // ProtoSem Rendering Logic
+      const timelineContainer = document.getElementById('protosem-timeline');
+      const protoSemWeeks = Array.from({ length: 20 }, (_, i) => {
+          const week = i + 1;
+          return {
+              week: week,
+              phase: Math.ceil(week / 5),
+              slug: `protosem/week-${week.toString().padStart(2, '0')}`,
+              status: "FIELD NOTES IN PROGRESS"
+          };
+      });
+
+      function renderTimeline(filterPhase = 'all') {
+          timelineContainer.innerHTML = '<div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent/0 via-accent/30 to-accent/0 transform -translate-x-1/2"></div>';
+          
+          let previousPhase = 0;
+
+          protoSemWeeks.forEach((item, index) => {
+              if (filterPhase !== 'all' && item.phase.toString() !== filterPhase) return;
+              
+              const isEven = index % 2 === 0;
+              const weekNum = item.week.toString().padStart(2, '0');
+              
+              // Add phase header on mobile for natural hierarchy
+              if (item.phase !== previousPhase && filterPhase === 'all') {
+                  timelineContainer.innerHTML += `
+                      <div class="md:hidden ml-8 mb-6 mt-8 relative" data-aos="fade-right">
+                          <span class="px-4 py-1.5 rounded-full bg-accent text-white text-xs font-bold tracking-widest shadow-lg shadow-accent/30">PHASE 0${item.phase}</span>
+                      </div>
+                  `;
+                  previousPhase = item.phase;
+              }
+
+              const html = `
+                  <div class="relative flex items-center justify-between md:justify-normal w-full mb-8 week-item group" data-aos="fade-up">
+                      <!-- Mobile line -->
+                      <div class="absolute left-3.5 top-8 bottom-[-2rem] w-0.5 bg-accent/20 md:hidden z-0"></div>
+                      
+                      <!-- Left Spacer (Desktop) -->
+                      <div class="hidden md:block w-5/12 ${!isEven ? 'order-1' : ''}"></div>
+                      
+                      <!-- Node -->
+                      <div class="z-10 flex items-center justify-center w-7 h-7 rounded-full bg-gray-100 dark:bg-gray-800 border-2 border-accent/50 shadow-[0_0_10px_rgba(41,151,255,0)] group-hover:shadow-[0_0_15px_rgba(41,151,255,0.4)] group-hover:border-accent group-hover:scale-110 transition-all duration-300 absolute left-0 md:left-1/2 transform md:-translate-x-1/2">
+                          <div class="w-2 h-2 rounded-full bg-accent/50 group-hover:bg-accent transition-colors"></div>
+                      </div>
+                      
+                      <!-- Card -->
+                      <a href="#${item.slug}" class="w-full ml-12 md:ml-0 md:w-5/12 glass p-6 rounded-2xl transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-accent/15 border border-white/20 dark:border-gray-700/50 hover:border-accent/40 cursor-pointer ${!isEven ? 'order-3 md:text-left' : 'order-3 md:order-1 md:text-right'} relative overflow-hidden block">
+                          <div class="absolute inset-0 bg-gradient-to-r from-accent/0 via-accent/5 to-accent/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                          
+                          <p class="text-[10px] font-bold text-accent/80 mb-2 tracking-[0.2em]">PHASE 0${item.phase}</p>
+                          <h5 class="text-xl font-bold text-gray-900 dark:text-white mb-3 transition-colors group-hover:text-accent flex items-center gap-2 ${!isEven ? '' : 'md:justify-end'}">
+                             WEEK ${weekNum}
+                          </h5>
+                          
+                          <div class="flex items-center gap-2 ${!isEven ? '' : 'md:justify-end'}">
+                              <span class="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600 group-hover:bg-accent transition-colors"></span>
+                              <p class="text-[10px] font-bold text-gray-500 dark:text-gray-400 group-hover:text-accent transition-colors tracking-widest uppercase">${item.status}</p>
+                          </div>
+                          
+                          <div class="absolute top-1/2 -translate-y-1/2 ${!isEven ? 'right-6' : 'right-6 md:right-auto md:left-6'} opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-accent">
+                              <svg class="w-5 h-5 ${!isEven ? '' : 'md:rotate-180'}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                          </div>
+                      </a>
+                  </div>
+              `;
+              timelineContainer.insertAdjacentHTML('beforeend', html);
+          });
+          
+          // Re-init AOS for dynamically added elements
+          if(typeof AOS !== 'undefined') AOS.refresh();
+      }
+
+      // Initial Render
+      renderTimeline();
+
+      // Navigation Logic
+      const navButtons = document.querySelectorAll('.phase-btn');
+      navButtons.forEach(btn => {
+          btn.addEventListener('click', (e) => {
+              // Update active state
+              navButtons.forEach(b => {
+                  b.classList.remove('bg-accent', 'text-white', 'shadow-lg', 'shadow-accent/20');
+                  b.classList.add('text-gray-500');
+                  b.classList.remove('active');
+              });
+              e.target.classList.remove('text-gray-500');
+              e.target.classList.add('bg-accent', 'text-white', 'shadow-lg', 'shadow-accent/20', 'active');
+              
+              // Render timeline
+              renderTimeline(e.target.dataset.phase);
+          });
+      });
     </script>
 </body>
 </html>
