@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dharun Karthik B - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              appleBlueLight: '#0071E3',
+              appleBlueDark: '#2997FF',
+            }
+          }
+        }
+      }
+    </script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .glass {
+          @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-xl;
+        }
+        .dark .glass {
+          @apply bg-gray-900/40 border-gray-700/50;
+        }
+        .text-accent {
+          @apply text-appleBlueLight dark:text-appleBlueDark;
+        }
+        .bg-accent {
+          @apply bg-appleBlueLight dark:bg-appleBlueDark;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            @apply bg-gray-50 dark:bg-[#0a0a0a] text-gray-900 dark:text-white transition-colors duration-300;
+        }
+      }
+    </style>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="relative">
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass border-b-0 m-4 rounded-full px-6 py-4 max-w-4xl mx-auto flex justify-between items-center">
+        <span class="font-bold text-xl tracking-tight">DK<span class="text-accent">.</span></span>
+        <div class="flex gap-6 items-center text-sm font-medium">
+            <a href="#experience" class="hover:text-accent transition">Experience</a>
+            <a href="#leadership" class="hover:text-accent transition">Leadership</a>
+            <a href="#skills" class="hover:text-accent transition">Skills</a>
+            <a href="resume.html" class="bg-accent text-white px-4 py-2 rounded-full hover:opacity-90 transition">Resume</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section: 3D Floating Card -->
+    <section class="min-h-screen flex items-center justify-center p-4 relative overflow-hidden pt-20">
+      <div class="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-indigo-100/50 dark:from-[#0a0a0a] dark:to-[#1a1a2e] -z-10"></div>
+      
+      <div class="glass p-10 md:p-14 rounded-3xl max-w-2xl w-full text-center z-10" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
+         <img src="https://ui-avatars.com/api/?name=Dharun+Karthik+B&background=random&size=256" alt="Profile" class="w-32 h-32 rounded-full mx-auto mb-6 shadow-2xl border-4 border-white dark:border-gray-800">
+         <h1 class="text-4xl md:text-5xl font-bold mb-4">Hi, I'm Dharun Karthik B</h1>
+         <h2 class="text-xl md:text-2xl font-medium mb-6 text-accent h-8"><span class="typed-text"></span></h2>
+         <p class="text-gray-600 dark:text-gray-300 mb-8 max-w-lg mx-auto leading-relaxed">
+            I'm currently studying B.Com Professional Accounting at Kumaraguru College of Liberal Arts and Science. I am deeply passionate about innovation, product development, and solving real-world problems.
+         </p>
+         <div class="flex flex-wrap justify-center gap-4">
+            <a href="#experience" class="bg-accent text-white px-8 py-3 rounded-full font-semibold hover:scale-105 transition shadow-lg shadow-appleBlueDark/30">Explore My Work</a>
+            <a href="https://www.linkedin.com/in/dharun-karthik-balasubramaniam-606433377" target="_blank" class="glass px-8 py-3 rounded-full font-semibold hover:bg-white/20 transition">LinkedIn</a>
+         </div>
+      </div>
+      
+      <!-- Decorative blobs -->
+      <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-accent/20 rounded-full blur-3xl -z-10"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-500/20 rounded-full blur-3xl -z-10"></div>
+    </section>
+
+    <main class="max-w-5xl mx-auto px-4 py-20 space-y-32">
+      
+      <!-- Experience -->
+      <section id="experience" data-aos="fade-up">
+        <h3 class="text-3xl font-bold mb-8 flex items-center gap-3">
+           <span class="w-8 h-1 bg-accent rounded-full"></span> Experience
+        </h3>
+        <div class="glass p-8 rounded-2xl relative overflow-hidden group hover:shadow-2xl hover:shadow-accent/10 transition-all duration-300">
+          <div class="absolute top-0 left-0 w-1 h-full bg-accent transition-transform origin-top scale-y-0 group-hover:scale-y-100 duration-300"></div>
+          <h4 class="text-xl font-bold">Innovation Engineer Trainee</h4>
+          <p class="text-accent mb-6 font-medium">FORGE Innovation Centre • Present</p>
+          <ul class="space-y-3 text-gray-600 dark:text-gray-300">
+             <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-accent mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <span>Work in a team to solve real-world problem statements through structured ideation and problem-solving.</span>
+             </li>
+             <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-accent mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <span>Design and develop practical product solutions based on identified user needs.</span>
+             </li>
+             <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-accent mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <span>Gain hands-on experience across problem identification, ideation, prototyping and product development.</span>
+             </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Leadership & Responsibility -->
+      <section id="leadership" data-aos="fade-up">
+        <h3 class="text-3xl font-bold mb-8 flex items-center gap-3">
+           <span class="w-8 h-1 bg-accent rounded-full"></span> Leadership & Responsibility
+        </h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="glass p-6 rounded-2xl hover:-translate-y-1 transition duration-300">
+            <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent mb-4 text-2xl">🏅</div>
+            <h4 class="font-bold text-lg">Sports House Captain</h4>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 font-medium">Student Council</p>
+            <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">Led and coordinated students in sports activities and house-level events. Organized and motivated students during inter-house sporting activities.</p>
+          </div>
+          <div class="glass p-6 rounded-2xl hover:-translate-y-1 transition duration-300">
+            <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent mb-4 text-2xl">👨‍🏫</div>
+            <h4 class="font-bold text-lg">Mentor & Judge</h4>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 font-medium">Ganit Vigyan Expo • 2024 - 2025</p>
+            <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">Mentored a group of 15 students in 2024 and served as a judge evaluating projects and presentations in 2025.</p>
+          </div>
+          <div class="glass p-6 rounded-2xl md:col-span-2 flex flex-col md:flex-row gap-6 items-center hover:-translate-y-1 transition duration-300">
+            <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center text-accent shrink-0 text-3xl">🎪</div>
+            <div>
+                <h4 class="font-bold text-lg">Organizing Committee</h4>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mb-2 font-medium">School Carnival • 2025 & 2026</p>
+                <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">Contributed to planning and execution of the school carnival for two consecutive years, ensuring smooth operations and event success.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills & Achievements -->
+      <section id="skills" data-aos="fade-up" class="grid md:grid-cols-2 gap-12">
+        <div>
+          <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+             <span class="w-6 h-1 bg-accent rounded-full"></span> Top Skills
+          </h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="glass px-4 py-2 rounded-full text-sm font-medium hover:bg-accent hover:text-white transition cursor-default">Leadership & Teamwork</span>
+            <span class="glass px-4 py-2 rounded-full text-sm font-medium hover:bg-accent hover:text-white transition cursor-default">Problem Solving</span>
+            <span class="glass px-4 py-2 rounded-full text-sm font-medium hover:bg-accent hover:text-white transition cursor-default">Innovation & Ideation</span>
+            <span class="glass px-4 py-2 rounded-full text-sm font-medium hover:bg-accent hover:text-white transition cursor-default">Product Development</span>
+            <span class="glass px-4 py-2 rounded-full text-sm font-medium hover:bg-accent hover:text-white transition cursor-default">Communication</span>
+            <span class="glass px-4 py-2 rounded-full text-sm font-medium hover:bg-accent hover:text-white transition cursor-default">Presentation</span>
+            <span class="glass px-4 py-2 rounded-full text-sm font-medium hover:bg-accent hover:text-white transition cursor-default">Event Coordination</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+             <span class="w-6 h-1 bg-accent rounded-full"></span> Achievements & Interests
+          </h3>
+          <ul class="space-y-4">
+            <li class="glass p-4 rounded-xl flex items-center gap-4 hover:scale-[1.02] transition">
+               <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent text-xl">🏆</div>
+               <span class="font-medium">2nd Place — Dalal Street</span>
+            </li>
+            <li class="glass p-4 rounded-xl flex items-center gap-4 hover:scale-[1.02] transition">
+               <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent text-xl">⚽</div>
+               <span class="font-medium">School Football Team Player</span>
+            </li>
+            <li class="glass p-4 rounded-xl flex items-center gap-4 hover:scale-[1.02] transition">
+               <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent text-xl">💡</div>
+               <span class="font-medium text-sm">Business, Finance, Innovation & Entrepreneurship</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="glass mt-20 border-x-0 border-b-0 py-8 text-center text-gray-500 dark:text-gray-400 text-sm">
+        <p>© 2026 Dharun Karthik B. Crafted with passion.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      new Typed('.typed-text', {
+        strings: ['Innovation Engineer Trainee', 'Problem Solver', 'Leader & Team Player'],
+        typeSpeed: 50,
+        backSpeed: 30,
+        loop: true
+      });
+      AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100
+      });
+      
+      // Auto-detect system preference for dark mode initially
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.classList.add('dark');
+      }
+    </script>
+</body>
+</html>
