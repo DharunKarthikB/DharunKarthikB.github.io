@@ -259,11 +259,11 @@
 
       // ProtoSem Rendering Logic
       const timelineContainer = document.getElementById('protosem-timeline');
-      const protoSemWeeks = Array.from({ length: 20 }, (_, i) => {
-          const week = i + 1;
+      const protoSemWeeks = Array.from({ length: 21 }, (_, i) => {
+          const week = i;
           return {
               week: week,
-              phase: Math.ceil(week / 5),
+              phase: Math.max(1, Math.ceil(week / 5)),
               slug: `protosem/week-${week.toString().padStart(2, '0')}`,
               status: "FIELD NOTES IN PROGRESS"
           };
