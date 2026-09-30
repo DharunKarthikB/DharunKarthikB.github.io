@@ -262,7 +262,7 @@
       const timelineContainer = document.getElementById('protosem-timeline');
       const protoSemWeeks = Array.from({ length: 21 }, (_, i) => {
           const week = i;
-          const isCompleted = week === 0;
+          const isCompleted = week === 0 || week === 6;
           return {
               week: week,
               phase: Math.max(1, Math.ceil(week / 5)),
